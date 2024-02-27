@@ -12,11 +12,18 @@ public class Figura {
         System.out.print("Introduce la AlturaDeFigura de la figura: ");
         double AlturaDeFigura = teclado.nextDouble();
 
-        String figura = (BaseDeFigura == AlturaDeFigura) ? "cuadrado" : "rectángulo";
-        double perimetro = 2 * (BaseDeFigura + AlturaDeFigura);
+        String figura = tipoFigura(BaseDeFigura, AlturaDeFigura);
+        double perimetro = CalculoPerimetro(BaseDeFigura, AlturaDeFigura);
 
         System.out.printf("La figura es un %s y su perímetro es: %.2f%n", figura, perimetro);
 
         teclado.close();
+    }
+
+    public static double CalculoPerimetro(double BaseDeFigura, double AlturaDeFigura) {
+        return 2 * (BaseDeFigura + AlturaDeFigura);
+    }
+    public static String tipoFigura(double BaseDeFigura, double AlturaDeFigura) {
+        return (BaseDeFigura == AlturaDeFigura) ? "cuadrado" : "rectángulo";
     }
 }
